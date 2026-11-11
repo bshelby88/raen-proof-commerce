@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RAEN Proof-of-Commerce — Trust infrastructure for x402 sellers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Public, on-chain-verifiable proof that your API gets paid. Live ledger, verified settlements, and telemetry for x402 / agent-commerce sellers. From $29/mo.">
+<style>
+:root { color-scheme: dark; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0a0e14; color:#e6edf3; font-family:ui-sans-serif,system-ui,sans-serif; line-height:1.65; padding:2.5rem 1rem; }
+main { max-width:880px; margin:0 auto; }
+h1 { font-size:2rem; margin-bottom:.5rem; }
+h1 span { color:#22d3ee; }
+h2 { color:#22d3ee; font-size:1.25rem; margin:2rem 0 .5rem; }
+.sub { color:#8b949e; font-size:1.05rem; margin-bottom:2rem; max-width:42rem; }
+.card { background:#161b22; border:1px solid #30363d; border-radius:10px; padding:1.2rem; margin:1rem 0; }
+.k { color:#8b949e; font-size:.8rem; text-transform:uppercase; letter-spacing:.05em; }
+.price { font-size:1.8rem; font-weight:700; color:#7ee787; }
+table { width:100%; border-collapse:collapse; margin:1rem 0; font-size:.95rem; }
+th { text-align:left; color:#22d3ee; border-bottom:1px solid #30363d; padding:.5rem .7rem; }
+td { padding:.5rem .7rem; border-bottom:1px solid #21262d; color:#b8c4cf; vertical-align:top; }
+td.g { color:#7ee787; font-weight:600; white-space:nowrap; }
+.note { background:#161b22; border:1px solid #30363d; border-radius:10px; padding:1rem; color:#8b949e; font-size:.9rem; margin-top:2rem; }
+a { color:#22d3ee; }
+code { color:#e6edf3; background:#21262d; padding:.1rem .35rem; border-radius:4px; }
+ul { margin:.5rem 0 .5rem 1.2rem; }
+li { margin:.3rem 0; }
+</style>
+</head>
+<body><main>
+<h1>Proof-of-Commerce <span>for x402 sellers</span></h1>
+<p class="sub">You sell to agents. Agents — and the humans behind them — buy from sellers whose payments are publicly verifiable. We run the trust layer: a live settlement ledger, on-chain-verified receipts, and a proof page for your fleet, hosted under your domain.</p>
+
+<h2>What you get</h2>
+<ul>
+<li><strong>Public sales ledger</strong> — every settled payment, per-service revenue, and distinct payers, served as a human page plus machine-readable JSON at <code>/ledger</code> on your host.</li>
+<li><strong>On-chain verification</strong> — any balance or settlement checkable with a single <code>eth_call</code> to a public Base RPC. No dashboard login, no "trust us" screenshots.</li>
+<li><strong>Live proof page</strong> — challenge/settle/fail counters and per-service funnels from your own settlement collector, updating in real time.</li>
+<li><strong>Rebate bookkeeping</strong> — charge-and-rebate flows reconciled on SETTLED payments, so "net $0" promos are provable, not claimed.</li>
+<li><strong>Weekly value report</strong> — revenue, funnel conversion, and payer counts you can paste into your own listings and pitches.</li>
+</ul>
+
+<h2>Pricing</h2>
+<div class="card"><div class="k">Starter — one service</div><div class="price">$29/mo</div>
+<ul><li>Ledger page + JSON endpoint</li><li>On-chain verification instructions embedded</li><li>24h telemetry counters</li></ul></div>
+<div class="card"><div class="k">Pro — up to 5 services</div><div class="price">$99/mo</div>
+<ul><li>Everything in Starter</li><li>Per-service funnels + failure breakdown</li><li>Weekly value-ledger report (JSON + Markdown)</li><li>Rebate reconciliation for charge-and-rebate funnels</li></ul></div>
+<p>Payment: USDC on Base (x402-native), or invoice for non-crypto businesses. Annual prepay: 2 months free.</p>
+
+<h2>Why listen to us</h2>
+<table>
+<tr><th>Our own numbers (live, not promised)</th><th>Where to check</th></tr>
+<tr><td class="g">$4.75 USDC settled all-time across a 12-service fleet</td><td><a href="https://settlement-collector.fly.dev/ledger">public sales ledger</a></td></tr>
+<tr><td class="g">~2,000+ challenges/24h instrumented, settle/fail split tracked</td><td><a href="https://settlement-collector.fly.dev/proof">live proof page</a></td></tr>
+<tr><td class="g">Charge-and-rebate: buyer pays $0.05, instantly rebated $0.05 — both txs on-chain</td><td><a href="https://settlement-collector.fly.dev/proof">proof page</a></td></tr>
+</table>
+<p>We built this for our own fleet first. Every claim above is a link to the raw record.</p>
+
+<h2>Who this is for</h2>
+<ul>
+<li>x402 / agent-commerce sellers whose buyers are agents that check things before they pay</li>
+<li>API businesses running micropayment rails who need a trust surface their sales pages can link to</li>
+<li>Marketplaces vetting sellers — a seller with a live, on-chain-verifiable ledger is pre-vetted</li>
+</ul>
+
+<h2>Setup</h2>
+<p>One deployment. You point us at your settlement collector (or we deploy a collector for you), we ship your ledger + proof surfaces under <code>yourdomain</code> within 48h, and hand over the repo. You own the data.</p>
+
+<p style="margin-top:2rem"><strong>Start:</strong> email <a href="mailto:ops@royalruby.io">ops@royalruby.io</a> with your service URL. We reply with scope and a payment link — no call required.</p>
+
+<div class="note">
+Proof of Commerce (our own instance): <a href="https://settlement-collector.fly.dev/proof">settlement-collector.fly.dev/proof</a> ·
+Sales ledger: <a href="https://settlement-collector.fly.dev/ledger">/ledger</a> ·
+Catalog: <a href="https://raen.royalruby.io">raen.royalruby.io</a> ·
+Managed services: <a href="https://raen-managed-dispute.vercel.app">dispute fulfillment</a> · <a href="https://raen-managed-ops.vercel.app">agent ops</a>
+</div>
+</main></body>
+</html>
